@@ -43,6 +43,10 @@ $routes->get('test/testlist', 'TestController::testlist');
 
 // actor
 $routes->get('actorlist', 'ActorController::index');
+$routes->get('addactor', 'ActorController::create');
+$routes->post('actor-form', 'ActorController::store');
+$routes->get('editactor/(:num)', 'ActorController::ActorByID/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

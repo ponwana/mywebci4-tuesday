@@ -9,5 +9,5 @@ class ActorModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['name', 'address','sex','brithday','age','activity','image'];
+    protected $allowedFields = ['name', 'address','sex','birthday','age','activity','image'];
 }
