@@ -47,4 +47,28 @@ class ActorController extends BaseController
             .view('actor/editactor',$data)
             .view('templates/footer');
     }
+
+    public function update(){
+        $ActorModel = new ActorModel();
+        $id = $this->request->getVar('id');
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'address' => $this->request->getVar('address'),
+            'sex' => $this->request->getVar('sex'),
+            'birthday' => $this->request->getVar('birthday'),
+            'age' => $this->request->getVar('age'),
+            'activity' => $this->request->getVar('activity'),
+            'image' => $this->request->getVar('image'),
+        ];
+        // print_r($data);
+        // exit();
+        $ActorModel->update($id, $data);
+        return $this->response->redirect(site_url('/actorlist'));
+    }
+
+    public function delete($id = null){
+        $ActorModel = new ActorModel();
+        $ActorModel->where('id',$id)->delete($id);
+        return $this->response->redirect(site_url('/actorlist'));
+    }
 }
