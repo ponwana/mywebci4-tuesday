@@ -49,6 +49,14 @@ $routes->get('editactor/(:num)', 'ActorController::ActorByID/$1');
 $routes->post('updateactor', 'ActorController::update');
 $routes->get('deleteactor/(:num)', 'ActorController::delete/$1');
 
+// game
+$routes->get('gamelist', 'GameController::index');
+$routes->get('addgame', 'GameController::create');
+$routes->post('game-form', 'GameController::store');
+$routes->get('editgame/(:num)', 'GameController::GameByID/$1');
+$routes->post('updategame', 'GameController::update');
+$routes->get('deletegame/(:num)', 'GameController::delete/$1');
+
 
 // flower
 $routes->get('flowerlist', 'FlowerController::index');
